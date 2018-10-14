@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<title>Hold On</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='Calendar/fullcalendar.min.css' rel='stylesheet' />
+<link href='Calendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+<script src='Calendar/lib/moment.min.js'></script>
+<script src='Calendar/lib/jquery.min.js'></script>
+<script src='Calendar/fullcalendar.min.js'></script>
+<script>
+
+  $(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+      defaultDate: '2018-10-13',
+      editable: true,
+      eventLimit: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2018-10-13'
+        },
+        {
+          title: 'Long Event',
+          start: '2018-10-01',
+          end: '2018-10-10'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2018-10-09T16:00:00'
+        },
+        {
+          id: 999,
+          title: 'Repeating Event',
+          start: '2018-10-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2018-10-11',
+          end: '2018-10-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2018-10-12T10:30:00',
+          end: '2018-10-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2018-10-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2018-10-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2018-10-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2018-10-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2018-10-13T07:00:00'
+        }
+      ]
+    });
+
+  });
+
+</script>
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {overflow: scroll; height: 100%}
+.bgimg {
+    background-image: url('purple-fade.png');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* Create two equal columns that floats next to each other */
+  .column1 {
+      float: left;
+      width: 30%;
+      padding: 10px;
+  }
+  .column2 {
+      float: left;
+      width: 70%;
+      padding: 10px;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+
+</style>
+<body>
+
+<div class="bgimg w3-top">
+  <div class="w3-bar w3-black w3-card" id="myNavbar">
+    <a href="Dashboard.html" class="w3-bar-item w3-button w3-wide"><i class="fa fa-home"></i> DASHBOARD</a>
+    <a href="Friends.html" class="w3-bar-item w3-button w3-wide"><i class="fa fa-heart"></i> FRIENDS</a>
+    <a href="Groups.html" class="w3-bar-item w3-button w3-wide"><i class="fa fa-users"></i> GROUPS</a>
+    <a href="Events.html" class="w3-bar-item w3-button w3-wide"><i class="fa fa-calendar"></i> EVENTS</a>
+
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+      <a class="w3-bar-item"></a>
+      <div class="w3-dropdown-hover">
+      <a class="w3-button"><i class="fa fa-user-circle-o"></i> Handle01</a>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="EditProfile.html" class="w3-bar-item w3-button">Edit Profile</a>
+        <a href="Homebase.html" class="w3-bar-item w3-button">Logout</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="w3-container">
+    <div class="row">
+      <div class="column1">
+        <h1 class="w3-center w3-white w3-xlarge w3-wide w3-animate-opacity"> HANDLE01</h1>
+          <div class="w3-row-padding w3-grayscale w3-container w3-card w3-center w3-round w3-white" style="margin-top:32px; height: 580px">
+            <h4 class="w3-center">John Smith</h4>
+              <p class="w3-center"><img src="user.png" class="w3-circle" style="height:108px;width:108px" alt="Avatar"></p>
+              <hr>
+              <p><i class="fa fa-envelope-open fa-fw w3-margin-right w3-text-theme"></i> johnsmith@umass.edu</p>
+              <hr>
+              <h5>Notifications</h5>
+
+          </div>
+      </div>
+      <div class="column2">
+        <div class="w3-row-padding w3-grayscale w3-container w3-card w3-center w3-round w3-white">
+          <div id='calendar'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
